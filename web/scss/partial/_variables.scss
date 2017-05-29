@@ -1,0 +1,33 @@
+/** SHOW/HIDE "Search by Type"**/
+$show_search_by_type: none;
+
+/** LOGO **/
+$logo: url(http://placehold.it/75x75);
+$logo_width: 75px;
+$logo_height: 75px;
+
+$mob_logo: url(http://placehold.it/180x50);
+$mob_logo_width: 180px;
+$mob_logo_height: 50px;
+
+/** BUTTON COLORS **/
+$highlight_color: rgb(171, 0, 20);
+$darkred: #ea504e; // Hover
+
+$secondary_color: rgb(0, 134, 178);
+$darkdarkblue: #33495A; //hover
+
+/** Background Colors **/
+$header-color: rgb(225, 225, 225);
+
+$filterbg-color: #EBEBEB;
+$filterbg-border-color: #CCC;
+
+$eventsbg-color: whitesmoke;
+$eventsbg-border-color: #DCDCDC;
+
+$gray: rgb(110, 110, 110);
+$lightgray: #e1e1e1;
+
+$serif: 'Georgia', serif;
+$sans-serif: 'Montserrat', Helvetica, sans-serif;
