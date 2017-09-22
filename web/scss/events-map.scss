@@ -427,6 +427,12 @@ section#header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    position: absolute;
+    z-index: 100;
+    left: 50px;
+    top: 25px;
+
     // float: left;
 
     strong {
@@ -1352,9 +1358,9 @@ footer {
               #screen-title { display: none; }
               #mobile-title {
                 display: block; letter-spacing: 1px;
-                background-image: $mob_logo;
-                width: $mob_logo_width;
-                height: $mob_logo_height;
+                background-image: $logo;
+                width: $logo_width;
+                height: $logo_height;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;

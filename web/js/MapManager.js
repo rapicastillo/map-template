@@ -410,11 +410,6 @@ var MapManager = (function($, d3, leaflet) {
       //Sort event
       filtered = sortEvents(filtered, sort, filterTypes);
 
-      //Check cookies
-      var email = Cookies.get('map.bernie.email');
-      var events_attended_raw = Cookies.get('map.bernie.eventsJoined.' + email);
-      var events_attended = events_attended_raw ? JSON.parse(events_attended_raw) : [];
-
       //Render event
       var eventList = d3.select("#event-list")
         .selectAll("li")

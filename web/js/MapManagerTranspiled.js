@@ -8,28 +8,14 @@ var Event = function ($) {
     this.properties = properties;
 
     this.blip = null;
-    // // this.title = properties.field_65;
-    // this.url = properties.field_68_raw.url;
-    // this.address = properties.field_64;
-    // this.listing = null;
     this.className = properties.event_type.replace(/[^\w]/ig, "-").toLowerCase();
-
-    // if (properties.url) {
-    //   properties.url = properties.facebook ? properties.facebook : (
-    //                         properties.twitter ? properties.twitter : null
-    //                    )
-    //   if (!properties.url) {
-    //     return null;
-    //   }
-    // }
-
     this.props = {};
     this.props.title = properties.title;
     this.props.url = properties.url; //properties.url.match(/^@/g) ? `http://twitter.com/${properties.url}` : properties.url;
     this.props.start_datetime = properties.start_time;
     this.props.address = properties.venue;
     this.props.supergroup = properties.supergroup;
-    this.props.start_time = moment(properties.start_time, 'YYYY-MM-DD HH:mm:ss')._d;
+    this.props.start_time = moment(properties.start_datetime)._d;
 
     // Remove the timezone issue from
     this.props.start_time = new Date(this.props.start_time.valueOf());
@@ -50,8 +36,6 @@ var Event = function ($) {
     this.render = function (distance, zipcode) {
 
       var that = this;
-
-      // var endtime = that.endTime ? moment(that.endTime).format("h:mma") : null;
 
       if (this.props.event_type === 'Group') {
         return that.render_group(distance, zipcode);
@@ -169,7 +153,6 @@ var MapManager = function ($, d3, leaflet) {
       var target = event.target._latlng;
 
       var filtered = eventsList.filter(function (d) {
-
         return target.lat == d.props.LatLng[0] && target.lng == d.props.LatLng[1] && (!current_filters || current_filters.length == 0 || $(d.properties.filters).not(current_filters).length != d.properties.filters.length);
       }).sort(function (a, b) {
         return a.props.start_time - b.props.start_time;
@@ -177,10 +160,6 @@ var MapManager = function ($, d3, leaflet) {
 
       var div = $("<div />").append(filtered.length > 1 ? "<h3 class='sched-count'>" + filtered.length + " Results</h3>" : "").append($("<div class='popup-list-container'/>").append($("<ul class='popup-list'>").append(filtered.map(function (d) {
         return $("<li class=montserrat/>").attr('data-attending', function (prop) {
-          var email = Cookies.get('map.bernie.email');
-          var events_attended_raw = Cookies.get('map.bernie.eventsJoined.' + email);
-          var events_attended = events_attended_raw ? JSON.parse(events_attended_raw) : [];
-          return $.inArray(prop.id_obfuscated, events_attended) > -1;
         }(d.properties)).addClass(d.isFull ? "is-full" : "not-full").addClass(d.visible ? "is-visible" : "not-visible").append(d.render());
       }))));
 
@@ -211,21 +190,6 @@ var MapManager = function ($, d3, leaflet) {
 
       uniqueLocs.forEach(function (item) {
 
-        // setTimeout(function() {
-        // if (item.className == "campaign-office") {
-        //   L.marker(item.latLng, {icon: CAMPAIGN_OFFICE_ICON, className: item.className})
-        //     .on('click', function(e) { _popupEvents(e); })
-        //     .addTo(offices);
-        // } else if (item.className == "gotv-center") {
-        //   L.marker(item.latLng, {icon: GOTV_CENTER_ICON, className: item.className})
-        //     .on('click', function(e) { _popupEvents(e); })
-        //     .addTo(gotvCenter);
-        // }else
-        // if (item.className.match(/bernie\-event/ig)) {
-        //   L.circleMarker(item.latLng, { radius: 12, className: item.className, color: 'white', fillColor: '#F55B5B', opacity: 0.8, fillOpacity: 0.7, weight: 2 })
-        //     .on('click', function(e) { _popupEvents(e); })
-        //     .addTo(overlays);
-        // }
         if (item.className == 'group-meeting') {
           L.circleMarker(item.latLng, { radius: 5, className: item.className, color: 'white', fillColor: '#e71029', opacity: 0.8, fillOpacity: 0.7, weight: 2 }).on('click', function (e) {
             _popupEvents(e);
@@ -242,7 +206,6 @@ var MapManager = function ($, d3, leaflet) {
         // }, 10);
       });
 
-      // $(".leaflet-overlay-pane").find(".bernie-event").parent().prependTo('.leaflet-zoom-animated');
     }; // End of initialize
 
     var toMile = function toMile(meter) {
@@ -379,9 +342,6 @@ var MapManager = function ($, d3, leaflet) {
       filtered = sortEvents(filtered, sort, filterTypes);
 
       //Check cookies
-      var email = Cookies.get('map.bernie.email');
-      var events_attended_raw = Cookies.get('map.bernie.eventsJoined.' + email);
-      var events_attended = events_attended_raw ? JSON.parse(events_attended_raw) : [];
 
       //Render event
       var eventList = d3.select("#event-list").selectAll("li").data(filtered, function (d) {
@@ -490,11 +450,6 @@ var MapManager = function ($, d3, leaflet) {
       //Sort event
       filtered = sortEvents(filtered, sort, filterTypes);
 
-      //Check cookies
-      var email = Cookies.get('map.bernie.email');
-      var events_attended_raw = Cookies.get('map.bernie.eventsJoined.' + email);
-      var events_attended = events_attended_raw ? JSON.parse(events_attended_raw) : [];
-
       //Render event
       var eventList = d3.select("#event-list").selectAll("li").data(filtered, function (d) {
         return d.props.url;
@@ -563,20 +518,20 @@ var VotingInfoManager = function ($) {
     var module = {};
 
     function buildRegistrationMessage(state) {
-      var $msg = $("<div class='registration-msg'/>").append($("<h3/>").text("Registration deadline: " + moment(new Date(state.registration_deadline)).format("MMM D"))).append($("<p />").html(state.name + " has <strong>" + state.is_open + " " + state.type + "</strong>. " + state.you_must)).append($("<p />").html("Find out where and how to register at <a target='_blank' href='https://vote.berniesanders.com/" + state.state + "'>vote.berniesanders.com</a>"));
+      var $msg = "";
 
       return $msg;
     }
 
     function buildPrimaryInfo(state) {
 
-      var $msg = $("<div class='registration-msg'/>").append($("<h3/>").text("Primary day: " + moment(new Date(state.voting_day)).format("MMM D"))).append($("<p />").html(state.name + " has <strong>" + state.is_open + " " + state.type + "</strong>. " + state.you_must)).append($("<p />").html("Find out where and how to vote at <a target='_blank' href='https://vote.berniesanders.com/" + state.state + "'>vote.berniesanders.com</a>"));
+      var $msg = "";
 
       return $msg;
     }
 
     function buildCaucusInfo(state) {
-      var $msg = $("<div class='registration-msg'/>").append($("<h3/>").text("Caucus day: " + moment(new Date(state.voting_day)).format("MMM D"))).append($("<p />").html(state.name + " has <strong>" + state.is_open + " " + state.type + "</strong>. " + state.you_must)).append($("<p />").html("Find out where and how to caucus at <a target='_blank' href='https://vote.berniesanders.com/" + state.state + "'>vote.berniesanders.com</a>"));
+      var $msg = "";
 
       return $msg;
     }
@@ -616,23 +571,6 @@ var VotingInfoManager = function ($) {
 
   $(document).on("click", ".rsvp-link, .event-rsvp-activity", function (event, params) {
     event.stopPropagation();
-  });
-
-  //Show email
-  $(document).on("show-event-form", function (events, target) {
-    var form = $(target).closest(".event-item").find(".event-rsvp-activity");
-    if (Cookies.get('map.bernie.email')) {
-      form.find("input[name=email]").val(Cookies.get('map.bernie.email'));
-    }
-
-    if (Cookies.get('map.bernie.phone')) {
-      form.find("input[name=phone]").val(Cookies.get('map.bernie.phone'));
-    }
-
-    // var params =  $.deparam(window.location.hash.substring(1) || "");
-    // form.find("input[name=zipcode]").val(params.zipcode ? params.zipcode : Cookies.get('map.bernie.zipcode'));
-
-    form.fadeIn(100);
   });
 
   $(document).on("submit", "form.event-form", function () {
@@ -675,42 +613,6 @@ var VotingInfoManager = function ($) {
     // }
 
     $(this).find(".event-error").hide();
-    var $this = $(this);
-    $.ajax({
-      type: 'POST',
-      url: 'https://organize.berniesanders.com/events/add-rsvp',
-      // url: 'https://bernie-ground-control-staging.herokuapp.com/events/add-rsvp',
-      crossDomain: true,
-      dataType: 'json',
-      data: {
-        // name: query['name'],
-        phone: query['phone'],
-        email: query['email'],
-        zip: query['zipcode'],
-        shift_ids: shifts,
-        event_id_obfuscated: query['id_obfuscated']
-      },
-      success: function success(data) {
-        Cookies.set('map.bernie.zipcode', query['zipcode'], { expires: 7 });
-        Cookies.set('map.bernie.email', query['email'], { expires: 7 });
-        Cookies.set('map.bernie.name', query['name'], { expires: 7 });
-
-        if (query['phone'] != '') {
-          Cookies.set('map.bernie.phone', query['phone'], { expires: 7 });
-        }
-
-        //Storing the events joined
-        var events_joined = JSON.parse(Cookies.get('map.bernie.eventsJoined.' + query['email']) || "[]") || [];
-
-        events_joined.push(query['id_obfuscated']);
-        Cookies.set('map.bernie.eventsJoined.' + query['email'], events_joined, { expires: 7 });
-
-        $this.closest("li").attr("data-attending", true);
-
-        $this.html("<h4 style='border-bottom: none'>RSVP Successful! Thank you for joining to this event!</h4>");
-        $container.delay(1000).fadeOut('fast');
-      }
-    });
 
     return false;
   });

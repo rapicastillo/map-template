@@ -55,7 +55,7 @@ TODO:
 <div id="header" class='primary_font'>
 
   <div class="main-title-area">
-    <div style="margin-bottom: 4px;">
+    <div style="">
       <div id='spiel'></div>
     </div>
   </div>
@@ -191,15 +191,13 @@ TODO:
 <!-- <script src='/js/leaflet-bouncer.js'></script> -->
 <script src='https://d2zfgjd0dxweyq.cloudfront.net/js/moment.min.js'></script>
 <script src='https://d2zfgjd0dxweyq.cloudfront.net/js/js-cookie.js'></script>
-<script src='https://d80vmbqb0w49q.cloudfront.net/js/MapManagerTranspiled.js'></script>
+<script src='/js/MapManagerTranspiled.js'></script>
 <script type='text/javascript'>
 window.eventTypeFilters = [
-  // {
-  //   name: 'Campaign Office',
-  //   id: 'campaign-office',
-  //   onItem: "<img style='width: 14px; height: 14px;' src='/img/icon/star.png' />",
-  //   offItem: "<img style='width: 14px; height: 14px;' src='/img/icon/star-gray.png' />"
-  // }
+  {
+    name: 'Resist Trump',
+    id: 'Resist Trump',
+  }
 ];
 </script>
 <script type='text/javascript'>
@@ -208,14 +206,17 @@ window.eventTypeFilters = [
   $("#loading-icon").show();
 
   $.ajax({
-    url: 'https://dnb6leangx6dc.cloudfront.net/output/chrismurphy.js.gz', //'|**DATA_SOURCE**|',
-    dataType: 'script',
+    url: '/d/sample.json', //'|**DATA_SOURCE**|',
+    dataType: 'json',
     cache: true, // otherwise will get fresh copy every page load
     success: function(data) {
+      console.log("XXX", data)
       d3.csv('//d1y0otadi3knf6.cloudfront.net/d/us_postal_codes.gz',
         function(zipcodes) {
           $("#loading-icon").hide();
           //Clean data
+          console.log("XXX", data, window.EVENTS_DATA)
+          window.EVENTS_DATA = data;
           window.EVENTS_DATA.forEach(function(d) {
             d.filters = [];
             //Set filter info
@@ -246,9 +247,11 @@ window.eventTypeFilters = [
               center: [parseFloat(m[1]), parseFloat(m[2])],
               zoom: parseInt(m[3])
             };
+            console.log("XXX")
             window.mapManager = MapManager(window.EVENTS_DATA, campaignOffices, zipcodes, {
               defaultCoord: defaultCoord
             });
+            console.log("XXX")
 
             window.mapManager.filterByCoords(defaultCoord.center, 50, params.sort, params.f);
           } else {
@@ -256,32 +259,28 @@ window.eventTypeFilters = [
           }
 
           // Load Connecticut area
-          var district_boundary = new L.geoJson(null, {
-            clickable: false
-          });
-          district_boundary.addTo(window.mapManager.getMap());
 
           /*** TOTALLY OPTIONAL AREA FOR FOCUSED AREAS. EXAMPLE IS CONNETICUT ***/
           /*** TODO: Repalace/Remove this ***/
-          $.ajax({
-            dataType: "json",
-            url: "d/ct.geojson",
-            success: function(data) {
-              $(data.geometries).each(function(key, data) {
-                district_boundary
-                  .addData(data)
-                  .setStyle({
-                    fillColor: 'transparent',
-                    color: 'rgb(0, 134, 178)'
-                  });
-                if (!params.zipcode || params.zipcode === '') {
-                  window.mapManager.getMap()
-                    .fitBounds(district_boundary.getBounds());
-                }
-              });
-
-            }
-          }).error(function() {});
+          // $.ajax({
+          //   dataType: "json",
+          //   url: "d/ct.geojson",
+          //   success: function(data) {
+          //     $(data.geometries).each(function(key, data) {
+          //       district_boundary
+          //         .addData(data)
+          //         .setStyle({
+          //           fillColor: 'transparent',
+          //           color: 'rgb(0, 134, 178)'
+          //         });
+          //       if (!params.zipcode || params.zipcode === '') {
+          //         window.mapManager.getMap()
+          //           .fitBounds(district_boundary.getBounds());
+          //       }
+          //     });
+          //
+          //   }
+          // }).error(function() {});
 
           if ($("input[name='zipcode']").val() == '' && Cookies.get('map.bernie.zipcode') && window.location.hash == '') {
             $("input[name='zipcode']").val(Cookies.get('map.bernie.zipcode'));
