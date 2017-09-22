@@ -144,11 +144,11 @@ html, body {
     display: block; }
   html a, body a {
     text-decoration: none;
-    color: #004b8d; }
+    color: #0086b2; }
   html .contribute.contribute-big, body .contribute.contribute-big {
     font-weight: bold;
     font-size: 12px;
-    background-color: #004b8d;
+    background-color: #ab0014;
     letter-spacing: 0.15em;
     margin: 0.3em auto 0;
     border-radius: 3px;
@@ -157,7 +157,7 @@ html, body {
     display: inline-block;
     text-transform: uppercase; }
     html .contribute.contribute-big:hover, body .contribute.contribute-big:hover {
-      background-color: #00294d; }
+      background-color: #ea504e; }
   html section#campaign-offices, body section#campaign-offices {
     position: absolute;
     right: 395px;
@@ -183,7 +183,7 @@ html, body {
       padding: 5px;
       background: whitesmoke;
       border-radius: 10px 10px 3px 3px;
-      border-top: 20px solid #004b8d;
+      border-top: 20px solid #0086b2;
       padding-right: 0;
       padding-top: 0; }
       html section#campaign-offices .viewport h3.title, body section#campaign-offices .viewport h3.title {
@@ -240,7 +240,7 @@ html, body {
           html section#campaign-offices .viewport .container ul div.social-area a.rsvp-link, body section#campaign-offices .viewport .container ul div.social-area a.rsvp-link {
             font-weight: bold;
             font-size: 12px;
-            background-color: #004b8d;
+            background-color: #ab0014;
             letter-spacing: 0.15em;
             margin: 0.3em auto 0;
             border-radius: 3px;
@@ -252,12 +252,12 @@ html, body {
             margin-bottom: 3px;
             line-height: 1; }
             html section#campaign-offices .viewport .container ul div.social-area a.rsvp-link:hover, body section#campaign-offices .viewport .container ul div.social-area a.rsvp-link:hover {
-              background-color: #00294d; }
+              background-color: #ea504e; }
           html section#campaign-offices .viewport .container ul div.social-area span.rsvp-count, body section#campaign-offices .viewport .container ul div.social-area span.rsvp-count {
             display: none; }
           html section#campaign-offices .viewport .container ul div.social-area.more-than-5 span.rsvp-count, body section#campaign-offices .viewport .container ul div.social-area.more-than-5 span.rsvp-count {
             display: inline-block;
-            color: #004b8d;
+            color: #ab0014;
             margin-left: 8px;
             font-weight: 300;
             letter-spacing: 1px;
@@ -331,7 +331,7 @@ html, body {
       html nav#mobile-nav ul#nav li a, body nav#mobile-nav ul#nav li a {
         width: 90%;
         color: white;
-        background-color: #004b8d;
+        background-color: #ab0014;
         display: inline-block;
         padding: 7px 8px;
         border-radius: 2px;
@@ -350,7 +350,7 @@ html, body {
       right: 3px; }
       html section#header nav li a.contribute, body section#header nav li a.contribute {
         color: white;
-        background-color: #004b8d;
+        background-color: #ab0014;
         box-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
         display: inline-block;
         padding: 9px 12px;
@@ -397,9 +397,9 @@ html, body {
       font-weight: 300;
       display: inline-block;
       color: rgba(255, 255, 255, 0.52);
-      background-image: url(/img/logo.gif);
-      width: 120px;
-      height: 100px;
+      background-image: url(http://placehold.it/75x75);
+      width: 75px;
+      height: 75px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -447,11 +447,11 @@ html, body {
         z-index: 100;
         width: 100%;
         text-align: center;
-        background-color: #004b8d;
+        background-color: #ab0014;
         color: white;
         padding: 5px 0; }
       html section#activity-area article#map .leaflet-popup-content-wrapper, body section#activity-area article#map .leaflet-popup-content-wrapper {
-        border-top: 2px solid #004b8d; }
+        border-top: 2px solid #0086b2; }
         html section#activity-area article#map .leaflet-popup-content-wrapper .leaflet-popup-content, body section#activity-area article#map .leaflet-popup-content-wrapper .leaflet-popup-content {
           min-height: 140px;
           position: relative; }
@@ -462,7 +462,7 @@ html, body {
             top: -23px;
             left: 4px;
             padding: 4px 10px 3px;
-            background-color: #004b8d;
+            background-color: #0086b2;
             color: white;
             font-size: 12px;
             text-transform: uppercase;
@@ -511,7 +511,7 @@ html, body {
           html section#activity-area article#map div.popup-list-container ul li div.social-area a.rsvp-link, body section#activity-area article#map div.popup-list-container ul li div.social-area a.rsvp-link {
             font-weight: bold;
             font-size: 12px;
-            background-color: #004b8d;
+            background-color: #ab0014;
             letter-spacing: 0.15em;
             margin: 0.3em auto 0;
             border-radius: 3px;
@@ -523,12 +523,12 @@ html, body {
             margin-bottom: 3px;
             line-height: 1; }
             html section#activity-area article#map div.popup-list-container ul li div.social-area a.rsvp-link:hover, body section#activity-area article#map div.popup-list-container ul li div.social-area a.rsvp-link:hover {
-              background-color: #00294d; }
+              background-color: #ea504e; }
           html section#activity-area article#map div.popup-list-container ul li div.social-area span.rsvp-count, body section#activity-area article#map div.popup-list-container ul li div.social-area span.rsvp-count {
             display: none; }
           html section#activity-area article#map div.popup-list-container ul li div.social-area.more-than-5 span.rsvp-count, body section#activity-area article#map div.popup-list-container ul li div.social-area.more-than-5 span.rsvp-count {
             display: inline-block;
-            color: #004b8d;
+            color: #ab0014;
             margin-left: 8px;
             font-weight: 300;
             letter-spacing: 1px;
@@ -582,7 +582,7 @@ html, body {
       display: inline-block;
       text-align: center;
       padding: 10px 5px;
-      background-color: #004b8d;
+      background-color: #0086b2;
       margin: 10px 0;
       border-radius: 2px;
       color: white;
@@ -590,7 +590,7 @@ html, body {
       text-transform: uppercase;
       letter-spacing: 2px; }
       html article#events .filter-button:hover, body article#events .filter-button:hover {
-        background-color: #00294d; }
+        background-color: #33495A; }
     html article#events.show-type-filter .filter-button.show-filter, body article#events.show-type-filter .filter-button.show-filter {
       display: none; }
     html article#events.show-type-filter #filter-popup-area #filter-list-area, body article#events.show-type-filter #filter-popup-area #filter-list-area {
@@ -619,13 +619,13 @@ html, body {
             border-radius: 17px;
             box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); }
           html article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label .map-red-circle, body article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label .map-red-circle {
-            background-color: #004b8d; }
+            background-color: #ab0014; }
           html article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label[for=indivisible-action] .circle-button.default-on, body article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label[for=indivisible-action] .circle-button.default-on {
             background-color: #a00003; }
           html article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label[for=group-meeting] .circle-button.default-on, body article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label[for=group-meeting] .circle-button.default-on {
-            background-color: #004b8d; }
+            background-color: #ab0014; }
           html article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label .circle-button.default-on, body article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label .circle-button.default-on {
-            background-color: #004b8d; }
+            background-color: #ab0014; }
           html article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label .circle-button.default-off, body article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li label .circle-button.default-off {
             background-color: lightgray; }
         html article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li input.filter-type + label .filter-on, body article#events.show-type-filter #filter-popup-area #filter-list-area div#f-container ul li input.filter-type + label .filter-on {
@@ -682,7 +682,7 @@ html, body {
       height: calc(100% - 124px); }
       html article#events div#event-list-container div.registration-msg, body article#events div#event-list-container div.registration-msg {
         padding: 20px;
-        background-color: #004b8d;
+        background-color: #ab0014;
         margin-bottom: 20px; }
         html article#events div#event-list-container div.registration-msg h3, body article#events div#event-list-container div.registration-msg h3 {
           color: white;
@@ -729,7 +729,7 @@ html, body {
         text-align: center;
         display: inline-block;
         font-size: 24px;
-        color: #004b8d; }
+        color: #0086b2; }
       html article#events div#event-list-container ul#event-list li, body article#events div#event-list-container ul#event-list li {
         position: relative;
         padding: 15px 6px 15px 10px;
@@ -762,7 +762,7 @@ html, body {
         html article#events div#event-list-container ul#event-list li div.social-area a.rsvp-link, body article#events div#event-list-container ul#event-list li div.social-area a.rsvp-link {
           font-weight: bold;
           font-size: 12px;
-          background-color: #004b8d;
+          background-color: #ab0014;
           letter-spacing: 0.15em;
           margin: 0.3em auto 0;
           border-radius: 3px;
@@ -774,12 +774,12 @@ html, body {
           margin-bottom: 3px;
           line-height: 1; }
           html article#events div#event-list-container ul#event-list li div.social-area a.rsvp-link:hover, body article#events div#event-list-container ul#event-list li div.social-area a.rsvp-link:hover {
-            background-color: #00294d; }
+            background-color: #ea504e; }
         html article#events div#event-list-container ul#event-list li div.social-area span.rsvp-count, body article#events div#event-list-container ul#event-list li div.social-area span.rsvp-count {
           display: none; }
         html article#events div#event-list-container ul#event-list li div.social-area.more-than-5 span.rsvp-count, body article#events div#event-list-container ul#event-list li div.social-area.more-than-5 span.rsvp-count {
           display: inline-block;
-          color: #004b8d;
+          color: #ab0014;
           margin-left: 8px;
           font-weight: 300;
           letter-spacing: 1px;
@@ -804,7 +804,7 @@ html, body {
           display: inline-block;
           margin: 10px 15px 0px;
           padding: 6px 7px;
-          background-color: #004b8d;
+          background-color: #0086b2;
           font-family: "Montserrat", Helvetica, sans-serif;
           color: white;
           font-size: 12px;
@@ -840,7 +840,7 @@ html, body {
         -o-transform: translate(-50%, 0);
         -ms-transform: translate(-50%, 0);
         transform: translate(-50%, 0);
-        background-color: #00294d;
+        background-color: #33495A;
         color: white;
         padding: 5px 8px;
         border-radius: 4px;
@@ -867,7 +867,7 @@ html, body {
       html article#events div#filters form input[type='text'], html article#events div#filters form input[type='number'], body article#events div#filters form input[type='text'], body article#events div#filters form input[type='number'] {
         margin-right: 15px;
         padding: 5px 0;
-        color: #00294d;
+        color: #33495A;
         border: none;
         background-color: white;
         text-align: center;
@@ -893,8 +893,8 @@ html, body {
   html li[data-attending=true] div.rsvp-attending, body li[data-attending=true] div.rsvp-attending {
     position: relative;
     background-color: transparent;
-    color: #004b8d;
-    border-color: #004b8d;
+    color: #0086b2;
+    border-color: #0086b2;
     border-width: 2px;
     border-radius: 4px;
     display: inline-block;
@@ -909,10 +909,10 @@ html, body {
       height: 0;
       position: absolute;
       border-right: 8px solid transparent;
-      border-top: 7px solid #004b8d;
+      border-top: 7px solid #0086b2;
       left: 128px;
       bottom: 0px;
-      border-bottom: 9px solid #004b8d; }
+      border-bottom: 9px solid #0086b2; }
   html li[data-attending=true] div.social-area, body li[data-attending=true] div.social-area {
     display: none; }
   html li[data-attending=false] div.rsvp-attending, body li[data-attending=false] div.rsvp-attending {
@@ -936,8 +936,8 @@ html, body {
     padding: 5px 10px;
     margin-top: 5px;
     display: inline-block;
-    color: #004b8d;
-    border-color: #004b8d;
+    color: #0086b2;
+    border-color: #0086b2;
     border-width: 2px;
     border-radius: 4px;
     border-style: solid; }
@@ -968,7 +968,7 @@ html, body {
     html div.event-item div.event-rsvp-activity form.event-form, body div.event-item div.event-rsvp-activity form.event-form {
       position: relative; }
       html div.event-item div.event-rsvp-activity form.event-form .event-error, body div.event-item div.event-rsvp-activity form.event-form .event-error {
-        color: #004b8d;
+        color: #ab0014;
         font-size: 9px;
         text-decoration: none;
         padding: 2px 0;
@@ -989,7 +989,7 @@ html, body {
         padding-bottom: 4px;
         margin-bottom: 4px;
         border-bottom: 1px solid lightgray;
-        color: #004b8d;
+        color: #0086b2;
         line-height: 1.25; }
         html div.event-item div.event-rsvp-activity form.event-form h4 strong, body div.event-item div.event-rsvp-activity form.event-form h4 strong {
           font-weight: 600; }
@@ -1017,7 +1017,7 @@ html, body {
         width: 100%;
         padding: 3px 0;
         border: none;
-        background-color: #004b8d;
+        background-color: #ab0014;
         color: white;
         margin-top: 4px;
         cursor: pointer;
@@ -1025,7 +1025,7 @@ html, body {
         text-transform: uppercase;
         letter-spacing: 1px; }
         html div.event-item div.event-rsvp-activity form.event-form input[type='submit']:hover, body div.event-item div.event-rsvp-activity form.event-form input[type='submit']:hover {
-          background-color: #00294d; }
+          background-color: #ea504e; }
   html #events-popup, body #events-popup {
     position: absolute;
     z-index: 1000;
@@ -1069,7 +1069,7 @@ html, body {
           background-color: white;
           border-radius: 10px; }
           html #events-popup .viewport .container .content h2.event-title, body #events-popup .viewport .container .content h2.event-title {
-            color: #004b8d;
+            color: #0086b2;
             font-size: 1.7em;
             font-weight: 600;
             line-height: 1.25;
@@ -1104,7 +1104,7 @@ html, body {
               float: left;
               text-align: right;
               padding-top: 12px;
-              color: #004b8d;
+              color: #ab0014;
               text-transform: uppercase;
               font-size: 12px;
               line-height: 1.5; }
@@ -1123,7 +1123,7 @@ html, body {
             width: 300px;
             margin-top: 20px;
             padding: 10px;
-            background-color: #004b8d;
+            background-color: #0086b2;
             border-radius: 4px;
             box-shadow: 0px 1px 0 rgba(0, 0, 0, 0.2); }
             html #events-popup .viewport .container .content div.rsvp-area h1, body #events-popup .viewport .container .content div.rsvp-area h1 {
@@ -1228,7 +1228,7 @@ html, body {
     font-size: 14px;
     font-weight: 600;
     bottom: -60px;
-    color: #004b8d; }
+    color: #ab0014; }
 
   body section#header {
     display: none; }
@@ -1244,9 +1244,9 @@ html, body {
         body section#activity-area > article#events h4.title #mobile-title {
           display: block;
           letter-spacing: 1px;
-          background-image: url(/img/logo.gif);
-          width: 120px;
-          height: 100px;
+          background-image: url(http://placehold.it/75x75);
+          width: 75px;
+          height: 75px;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover; }
@@ -1258,12 +1258,12 @@ html, body {
             font-size: 17px;
             border-radius: 0 !important;
             border: 1px solid !important;
-            border-color: #004b8d !important; }
+            border-color: #0086b2 !important; }
           body section#activity-area > article#events #filters select {
             font-size: 13px;
             border: 1px solid;
             padding: 4px 0;
-            border-color: #004b8d; }
+            border-color: #0086b2; }
           body section#activity-area > article#events #filters h3#switch-link {
             position: absolute;
             right: 5px;
@@ -1317,7 +1317,7 @@ html, body {
   html article#events div#filters, body article#events div#filters {
     background-color: #e1e1e1; }
     html article#events div#filters h5, body article#events div#filters h5 {
-      color: #004b8d; }
+      color: #0086b2; }
 
   html article#events div#filters h4, body article#events div#filters h4 {
     border-bottom: none;
