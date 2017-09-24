@@ -9,22 +9,22 @@ TODO:
 * Replace |***TITLE***|
 * Replace |***TWITTER_MESSAGE***|
 * Replace |***HOST_EVENT***|http://action.chrismurphy.com/page/s/fbct-host?source=map
-* !!!! GOOGLE ANALYTICS!!! 
+* !!!! GOOGLE ANALYTICS!!!
 -->
 <meta charset="utf-8" />
 <meta name='google-site-verification' content='' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="description" content="|***CAMPAIGN_NAME***|">
-<meta name="keywords" content="|***CAMPAIGN_NAME***|">
+<meta name="description" content="Working Families Party's Progressive Heroes 2017">
+<meta name="keywords" content="Working Families Party's Progressive Heroes 2017">
 <meta property="og:image" content="|***OG_IMAGE***|" />
-<meta property="og:url" content="|***OG_URL***|" />
-<meta property="og:title" content="|***OG_TITLE***|"/>
+<meta property="og:url" content="http://map.workingfamilies.org" />
+<meta property="og:title" content="Working Families Party's Progressive Heroes 2017"/>
 <meta property="og:description" content="|***OG_DESCRIPTION***|"/>
 
 
-<link rel="canonical" href="|***OG_URL***|">
+<link rel="canonical" href="http://map.workingfamilies.org">
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:site" content="|***OG_URL***|">
+<meta property="twitter:site" content="http://map.workingfamilies.org">
 <meta property="twitter:site:id" content="|***TWITTER_ID***|">
 <meta property="twitter:author" content="|***TWITTER_AUTHOR***|">
 <meta property="twitter:description" content="|***TWITTER_DESCRIPTION***|">
@@ -37,7 +37,7 @@ TODO:
 
 <link rel="stylesheet" type="text/css" href="./css/events-map.css">
 <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500' />
-<title>|***TITLE***|</title>
+<title>Working Families Party's Progressive Heroes 2017</title>
 
 <!--[if lte IE 9]>
        <meta http-equiv="refresh" content="0; url=https://go.chrismurphy.com/page/event/search_simple" />
@@ -65,14 +65,13 @@ TODO:
     <ul id="nav" class='nav'>
       <li>
         <a class="twitter-share-button"
-          data-url="|***OG_URL***|"
+          data-url="http://map.workingfamilies.org"
           href="|***TWITTER_MESSAGE***|">
           Tweet</a>
       </li>
       <li>
-        <div class="fb-share-button" data-href="|***OG_URL***|" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=|***OG_URL***|&amp;src=sdkpreparse">Share</a></div>
+        <div class="fb-share-button" data-href="http://map.workingfamilies.org" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmap.workingfamilies.org&amp;src=sdkpreparse">Share</a></div>
       </li>
-      <li><a href="|***HOST_EVENT***|" class="contribute" target="_blank">Host an Event</a></li>
     </ul>
   </nav>
   <div style="clear: both"></div>
@@ -159,13 +158,11 @@ TODO:
         </li></ul>
       <footer>
         <div id='footer-area' >
-          <h3 class='secondary_font'>Friends of |***CAMPAIGN_NAME***| </h3>
-          <p class='secondary_font'>|***CAMPAIGN_ADDRESS***|</p>
+          <h3 class='secondary_font'>Working Families Party's Progressive Heroes 2017</h3>
+          <p class='secondary_font'>1 Metrotech Center North 11th Fl, Brooklyn NY 11201</p>
           <br/><br/>
-          <sub><a href='https://donate.chrismurphy.com/page/content/privacy/'>Privacy Policy</a></sub>
+          <sub><a href='http://workingfamilies.org/privacy-policy/'>Privacy Policy</a></sub>
         </div>
-
-        <p class="paidfor">Paid for By Friends of |***CAMPAIGN_NAME***|</p>
 
       </footer>
     </div>
@@ -216,14 +213,13 @@ window.eventTypeFilters = [
         function(zipcodes) {
           $("#loading-icon").hide();
           //Clean data
-          console.log("XXX", data, window.EVENTS_DATA)
           window.EVENTS_DATA = data;
           window.EVENTS_DATA.forEach(function(d) {
             d.filters = [];
             //Set filter info
             switch (d.event_type) {
-              case "Fight Back CT May 21 Organizing Meeting":
-                d.filters.push('organizing-meeting');
+              case "Resist Trump":
+                d.filters.push('resist-trump');
                 break;
               case "Official Fight Back Connecticut Event":
                 d.filters.push('official');
@@ -248,11 +244,11 @@ window.eventTypeFilters = [
               center: [parseFloat(m[1]), parseFloat(m[2])],
               zoom: parseInt(m[3])
             };
-            console.log("XXX")
+
             window.mapManager = MapManager(window.EVENTS_DATA, campaignOffices, zipcodes, {
               defaultCoord: defaultCoord
             });
-            console.log("XXX")
+
 
             window.mapManager.filterByCoords(defaultCoord.center, 50, params.sort, params.f);
           } else {
