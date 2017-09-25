@@ -158,7 +158,7 @@ TODO:
         </li></ul>
       <footer>
         <div id='footer-area' >
-          <h3 class='secondary_font'>Working Families Party's Progressive Heroes 2017</h3>
+          <h3 class='secondary_font'>Working Families Party's<br/>Progressive Heroes 2017</h3>
           <p class='secondary_font'>1 Metrotech Center North 11th Fl, Brooklyn NY 11201</p>
           <br/><br/>
           <sub><a href='http://workingfamilies.org/privacy-policy/'>Privacy Policy</a></sub>
@@ -193,13 +193,22 @@ TODO:
 <script type='text/javascript'>
 window.eventTypeFilters = [
   {
-    name: 'Resist Trump',
-    id: 'Resist Trump',
+    name: 'Canvassing',
+    id: 'canvassing',
+  },
+  {
+    name: 'Phonebanking',
+    id: 'phonebanking'
+  },
+  {
+    name: 'Other',
+    id: 'other'
   }
 ];
 </script>
 <script type='text/javascript'>
 (function($, d3) {
+  window.EVENTS_DATA = [];
   var date = new Date();
   $("#loading-icon").show();
 
@@ -208,7 +217,6 @@ window.eventTypeFilters = [
     dataType: 'json',
     cache: true, // otherwise will get fresh copy every page load
     success: function(data) {
-      console.log("XXX", data)
       d3.csv('//d1y0otadi3knf6.cloudfront.net/d/us_postal_codes.gz',
         function(zipcodes) {
           $("#loading-icon").hide();
@@ -218,11 +226,11 @@ window.eventTypeFilters = [
             d.filters = [];
             //Set filter info
             switch (d.event_type) {
-              case "Resist Trump":
-                d.filters.push('resist-trump');
+              case "Canvassing":
+                d.filters.push('canvassing');
                 break;
-              case "Official Fight Back Connecticut Event":
-                d.filters.push('official');
+              case "Phonebanking":
+                d.filters.push('phonebanking');
                 break;
               default:
                 d.filters.push('other');
@@ -248,7 +256,6 @@ window.eventTypeFilters = [
             window.mapManager = MapManager(window.EVENTS_DATA, campaignOffices, zipcodes, {
               defaultCoord: defaultCoord
             });
-
 
             window.mapManager.filterByCoords(defaultCoord.center, 50, params.sort, params.f);
           } else {
@@ -377,9 +384,11 @@ window.eventTypeFilters = [
       $("#loading-icon").show();
 
       if (window.mapManager._options && window.mapManager._options.defaultCoord && params.zipcode.length != 5) {
+        console.log("XXX");
         window.mapManager.filterByType(params.f);
         window.mapManager.filterByCoords(window.mapManager._options.defaultCoord.center, params.distance, params.sort, params.f);
       } else {
+        console.log("YYYx");
         window.mapManager.filterByType(params.f);
         window.mapManager.filter(params.zipcode, params.distance, params.sort, params.f);
       }

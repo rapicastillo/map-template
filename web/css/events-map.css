@@ -645,7 +645,7 @@ html, body {
         height: calc(100% - 207px); } }
     @media screen and (max-width: 600px) {
       html article#events.show-type-filter #filter-popup-area, body article#events.show-type-filter #filter-popup-area {
-        display: none;
+        display: block;
         position: absolute;
         background-color: rgba(0, 0, 0, 0.8);
         width: calc(100% - 40px);
@@ -656,12 +656,12 @@ html, body {
         padding: 20px; } }
     @media screen and (min-width: 600px) {
       html article#events #filter-popup-area, body article#events #filter-popup-area {
-        display: none; }
+        display: block; }
         html article#events #filter-popup-area #filter-list-area, body article#events #filter-popup-area #filter-list-area {
           margin-top: 10px; }
           html article#events #filter-popup-area #filter-list-area ul li, body article#events #filter-popup-area #filter-list-area ul li {
             display: inline-block;
-            width: calc(100% - 20px);
+            width: calc(50% - 20px);
             padding: 5px 5px; } }
     @media screen and (max-width: 600px) {
       html article#events #filter-popup-area ul li, body article#events #filter-popup-area ul li {
