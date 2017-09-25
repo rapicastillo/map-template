@@ -191,15 +191,15 @@ var MapManager = function ($, d3, leaflet) {
       uniqueLocs.forEach(function (item) {
 
         if (item.className == 'group-meeting') {
-          L.circleMarker(item.latLng, { radius: 5, className: item.className, color: 'white', fillColor: '#e71029', opacity: 0.8, fillOpacity: 0.7, weight: 2 }).on('click', function (e) {
+          L.circleMarker(item.latLng, { radius: 5, className: item.className, color: 'white', fillColor: '#004b8d', opacity: 0.8, fillOpacity: 0.7, weight: 2 }).on('click', function (e) {
             _popupEvents(e);
           }).addTo(overlays);
         } else if (item.className == 'group') {
-          L.circleMarker(item.latLng, { radius: 4, className: item.className, color: 'white', fillColor: '#ab0014', opacity: 0.6, fillOpacity: 0.9, weight: 2 }).on('click', function (e) {
+          L.circleMarker(item.latLng, { radius: 4, className: item.className, color: 'white', fillColor: '#004b8d', opacity: 0.6, fillOpacity: 0.9, weight: 2 }).on('click', function (e) {
             _popupEvents(e);
           }).addTo(overlays);
         } else {
-          L.circleMarker(item.latLng, { radius: 5, className: item.className, color: 'white', fillColor: '#ab0014', opacity: 0.8, fillOpacity: 0.7, weight: 2 }).on('click', function (e) {
+          L.circleMarker(item.latLng, { radius: 5, className: item.className, color: 'white', fillColor: '#004b8d', opacity: 0.8, fillOpacity: 0.7, weight: 2 }).on('click', function (e) {
             _popupEvents(e);
           }).addTo(overlays);
         }
@@ -348,9 +348,7 @@ var MapManager = function ($, d3, leaflet) {
         return d.props.url;
       });
 
-      eventList.enter().append("li").attr("data-attending", function (d, id) {
-        return $.inArray(d.properties.id_obfuscated, events_attended) > -1;
-      }).attr("class", function (d) {
+      eventList.enter().append("li").attr("data-attending", "0").attr("class", function (d) {
         return (d.isFull ? 'is-full' : 'not-full') + " " + (this.visible ? "is-visible" : "not-visible");
       }).classed("lato", true).html(function (d) {
         return d.render(d.distance);
@@ -455,9 +453,7 @@ var MapManager = function ($, d3, leaflet) {
         return d.props.url;
       });
 
-      eventList.enter().append("li").attr("data-attending", function (d, id) {
-        return $.inArray(d.props.address + ' ' + d.props.start_datetime, events_attended) > -1;
-      }).attr("class", function (d) {
+      eventList.enter().append("li").attr("data-attending", "0").attr("class", function (d) {
         return (d.isFull ? 'is-full' : 'not-full') + " " + (this.visible ? "is-visible" : "not-visible");
       }).classed("lato", true).html(function (d) {
         return d.render(d.distance);
