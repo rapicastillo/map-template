@@ -8,17 +8,17 @@ TODO:
 * Replace |***TWITTER_[ID, AUTHOR, DESCRIPTION, TITLE, IMAGE]***|
 * Replace |***TITLE***|
 * Replace |***TWITTER_MESSAGE***|
-* Replace |***HOST_EVENT***|http://action.chrismurphy.com/page/s/fbct-host?source=map
+* Replace |***HOST_EVENT***|http://action.page/s/fbct-host?source=map
 * !!!! GOOGLE ANALYTICS!!!
 -->
 <meta charset="utf-8" />
 <meta name='google-site-verification' content='' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="description" content="Working Families Party's Progressive Heroes 2017">
-<meta name="keywords" content="Working Families Party's Progressive Heroes 2017">
+<meta name="description" content="Working Families Party">
+<meta name="keywords" content="Working Families Party">
 <meta property="og:image" content="|***OG_IMAGE***|" />
 <meta property="og:url" content="http://map.workingfamilies.org" />
-<meta property="og:title" content="Working Families Party's Progressive Heroes 2017"/>
+<meta property="og:title" content="Working Families Party"/>
 <meta property="og:description" content="|***OG_DESCRIPTION***|"/>
 
 
@@ -37,10 +37,19 @@ TODO:
 
 <link rel="stylesheet" type="text/css" href="./css/events-map.css">
 <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500' />
-<title>Working Families Party's Progressive Heroes 2017</title>
+<title>Working Families Party</title>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107554084-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107554084-2');
+</script>
 
 <!--[if lte IE 9]>
-       <meta http-equiv="refresh" content="0; url=https://go.chrismurphy.com/page/event/search_simple" />
+       <meta http-equiv="refresh" content="0; url=https://go./page/event/search_simple" />
 <![endif]-->
 <body class='list-view initial-view'>
   <div id="fb-root"></div>
@@ -59,6 +68,7 @@ TODO:
     <div style="">
       <div id='spiel'></div>
     </div>
+    <!-- <span id='main-title-meta'>A project of the Working Families Party</span> -->
   </div>
 
   <nav>
@@ -71,6 +81,12 @@ TODO:
       </li>
       <li>
         <div class="fb-share-button" data-href="http://map.workingfamilies.org" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmap.workingfamilies.org&amp;src=sdkpreparse">Share</a></div>
+      </li>
+      <li>
+        <a class='contribute' href='https://actionnetwork.org/events/new?event_campaign_id=3810'>Host a Phonebank</a>
+      </li>
+      <li>
+        <a class='contribute' href='https://actionnetwork.org/events/new?event_campaign_id=3811'>Host a Canvassing Event</a>
       </li>
     </ul>
   </nav>
@@ -147,7 +163,9 @@ TODO:
           </div>
         </div>
         <nav id='mobile-nav'>
-          <a href="https://go.chrismurphy.com/page/event/create" class="contribute" target="_blank"><img src='https://d80vmbqb0w49q.cloudfront.net/img/icon/add-icon.png' width='28px'/></a>
+          <a href="https://actionnetwork.org/events/399e719e860e4ffff8cb415b19513c08bad2d808/edit" class="contribute" target="_blank">
+            <img src='https://d80vmbqb0w49q.cloudfront.net/img/icon/add-icon.png' width='28px'/>
+          </a>
         </nav>
       </form>
     </div>
@@ -158,7 +176,7 @@ TODO:
         </li></ul>
       <footer>
         <div id='footer-area' >
-          <h3 class='secondary_font'>Working Families Party's<br/>Progressive Heroes 2017</h3>
+          <h3 class='secondary_font' style='line-height: 1.25'>Working Families Party</h3>
           <p class='secondary_font'>1 Metrotech Center North 11th Fl, Brooklyn NY 11201</p>
           <br/><br/>
           <sub><a href='http://workingfamilies.org/privacy-policy/'>Privacy Policy</a></sub>
@@ -213,15 +231,15 @@ window.eventTypeFilters = [
   $("#loading-icon").show();
 
   $.ajax({
-    url: '/d/sample.json', //'|**DATA_SOURCE**|',
-    dataType: 'json',
+    url: 'https://dnb6leangx6dc.cloudfront.net/output/workingfamilies.js.gz', //'|**DATA_SOURCE**|',
+    dataType: 'script',
     cache: true, // otherwise will get fresh copy every page load
     success: function(data) {
       d3.csv('//d1y0otadi3knf6.cloudfront.net/d/us_postal_codes.gz',
         function(zipcodes) {
           $("#loading-icon").hide();
           //Clean data
-          window.EVENTS_DATA = data;
+          // window.EVENTS_DATA = data;/
           window.EVENTS_DATA.forEach(function(d) {
             d.filters = [];
             //Set filter info
@@ -431,15 +449,6 @@ window.eventTypeFilters = [
 }(document, "script", "twitter-wjs"));</script>
 
 <!-- SOCIAL -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-18936430-1', 'auto');
-  ga('send', 'pageview');
-  </script>
   <script></script>
 
 

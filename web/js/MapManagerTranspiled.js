@@ -16,9 +16,10 @@ var Event = function ($) {
     this.props.address = properties.venue;
     this.props.supergroup = properties.supergroup;
     this.props.start_time = moment(properties.start_datetime)._d;
-
+    // console.log("~~~", this.props.start_time.toGMTString());
     // Remove the timezone issue from
-    this.props.start_time = new Date(this.props.start_time.valueOf());
+    this.props.start_datetime = properties.start_datetime;
+    this.props.start_time = new Date(this.props.start_time.toGMTString());
     this.props.group = properties.group;
     this.props.LatLng = [parseFloat(properties.lat), parseFloat(properties.lng)];
     this.props.event_type = properties.event_type;
@@ -80,7 +81,7 @@ var Event = function ($) {
     this.render_event = function (distance, zipcode) {
       var that = this;
 
-      var datetime = moment(that.props.start_time).format("MMM DD (ddd) h:mma");
+      var datetime = moment.utc(that.props.start_datetime).format("MMM DD (ddd) h:mma");
       var lat = that.props.lat;
       var lon = that.props.lng;
 
