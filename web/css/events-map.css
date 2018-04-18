@@ -1258,7 +1258,7 @@ html, body {
           letter-spacing: 1px;
           background-image: url(/img/logo.png);
           width: 280px;
-          height: 50px;
+          height: 60px;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover; }
@@ -1279,7 +1279,7 @@ html, body {
           body section#activity-area > article#events #filters h3#switch-link {
             position: absolute;
             right: 5px;
-            top: 185px;
+            top: 145px;
             display: block;
             font-family: "Montserrat", Helvetica, sans-serif;
             z-index: 1000; }

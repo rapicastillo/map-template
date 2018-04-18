@@ -228,7 +228,7 @@ window.eventTypeFilters = [
   $("#loading-icon").show();
 
   $.ajax({
-    url: 'https://dnb6leangx6dc.cloudfront.net/output/workingfamilies.js.gz', //'|**DATA_SOURCE**|',
+    url: 'https://dnb6leangx6dc.cloudfront.net/output/workingfamilies.js.gz?data=2018-04-18', //'|**DATA_SOURCE**|',
     dataType: 'script',
     cache: true, // otherwise will get fresh copy every page load
     success: function(data) {

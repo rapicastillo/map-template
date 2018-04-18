@@ -1370,9 +1370,9 @@ footer {
               #screen-title { display: none; }
               #mobile-title {
                 display: block; letter-spacing: 1px;
-                background-image: $logo;
-                width: $logo_width;
-                height: $logo_height;
+                background-image: $mob_logo;
+                width: $mob_logo_width;
+                height: $mob_logo_height;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
@@ -1402,7 +1402,7 @@ footer {
               h3#switch-link {
                 position: absolute;
                 right: 5px;
-                top: 185px;
+                top: 145px;
                 display: block;
                 font-family: $sans-serif;
                 z-index: 1000;
